@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import reactDom from "react-dom";
+
 import styled from "styled-components";
 
 //Components
@@ -15,15 +15,15 @@ const Room = styled.div`
   margin: 0 auto;
 `;
 
-function App() {
+const App = () => {
   //Lamp One
   const [isLampOneOn, setIsLampOneOn] = useState(false);
 
   //Lamp Two
   const [isLampTwoOn, setIsLampTwoOn] = useState(true);
 
-  const handleLightSwitchOne = () => setIsLampOneOn((prev) => !prev);
-  const handleLightSwitchTwo = () => setIsLampTwoOn((prev) => !prev);
+  const handleLightSwitchOne = () => setIsLampOneOn(prev => !prev);
+  const handleLightSwitchTwo = () => setIsLampTwoOn(prev => !prev);
 
   return (
     <Room>
@@ -41,7 +41,7 @@ function App() {
         name="two"
         response={handleLightSwitchTwo}
         switchOn={isLampTwoOn}
-        position="left"
+        position="right"
       />
     </Room>
   );
