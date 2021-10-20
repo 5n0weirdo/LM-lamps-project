@@ -13,5 +13,9 @@ const Button = styled.div`
   height: 50px;
   cursor: pointer;
 `;
-
+const LightSwitch = ({ response, position, switchOn }) => (
+  <Button onClick={response} position={position}>
+    {switchOn ? "On" : "Off"}
+  </Button>
+);
 export default LightSwitch;
